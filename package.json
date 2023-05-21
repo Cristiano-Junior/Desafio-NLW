@@ -1,8 +1,10 @@
 {
   "dependencies": {
+    "@fastify/cors": "^8.2.1",
     "@prisma/client": "^4.14.0",
     "fastify": "^4.17.0",
-    "node": "^20.1.0"
+    "node": "^20.1.0",
+    "zod": "^3.21.4"
   },
   "name": "desafio-nlw",
   "description": "Evento NLW, com aulas ao vivo e desafios, criação de uma cápsula do tempo.",
