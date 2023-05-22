@@ -1,6 +1,10 @@
+import "dotenv/config";
+
 import fastify from "fastify";
 import cors from "@fastify/cors";
+import jwt from "@fastify/jwt";
 import { memoriesRoutes } from "./routes/memories";
+import { authRoutes } from "./routes/auth";
 
 const app = fastify();
 
@@ -9,6 +13,11 @@ app.register(cors, {
   // origin: ["http://localhost:3000", "https://meusite.producao.com.br"], // limitando quem pode chamar a API
 });
 
+app.register(jwt, {
+  secret: "dhjadjksaAJSHDJAks21asdJDSHJAH12ik",
+});
+
+app.register(authRoutes);
 app.register(memoriesRoutes);
 
 app
